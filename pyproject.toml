@@ -1,0 +1,31 @@
+[project]
+name = "eroll"
+version = "0.1.0"
+description = "Download, OCR and search electoral rolls published on the ECI voter portal"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python-headless>=5.0.0.93",
+    "playwright>=1.63.0",
+    "pypdfium2>=5.13.0",
+    "pytesseract>=0.3.13",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E731", "RUF001"]  # RUF001: '≠' and '’' in strings are intentional
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

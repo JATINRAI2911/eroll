@@ -1,0 +1,17 @@
+# Generated data: roll PDFs, OCR output and voter lists are personal data. Never commit them.
+data/
+*.log
+
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
